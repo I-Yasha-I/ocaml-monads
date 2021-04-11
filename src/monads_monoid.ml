@@ -44,11 +44,11 @@ module String = struct
     module Base = struct
       type t = Rope.t
       let zero = Rope.of_string ""
-      let plus = Rope.(^)
+      let plus = Rope.concat2
     end
     include Base
     include Make(Base)
-    let add t x = Rope.(t ^ of_string x)
+    let add t x = Rope.concat2 t (Rope.of_string x)
     let run = Rope.to_string
   end
 

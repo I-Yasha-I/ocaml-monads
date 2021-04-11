@@ -1,0 +1,7 @@
+(library
+ (flags :standard -w -6-16-27-32..34)
+ (name monads)
+ (public_name monads)
+ (libraries rope core_kernel)
+ (preprocess
+  (pps ppx_sexp_conv ppx_compare ppx_bin_prot ppx_hash)))
